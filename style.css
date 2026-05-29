@@ -367,6 +367,84 @@ img {
   letter-spacing: 0.06em;
 }
 
+/* Hero CTA Row（ボタン＋アイコンの横並び用） */
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Hero Visual (PC用右側エリア) */
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-icon-badges {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+}
+
+.hero-icon-badge {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+  transition: transform 0.3s ease;
+}
+
+.hero-icon-badge:hover {
+  transform: scale(1.05);
+}
+
+.hero-cleaning-image {
+  width: 100%;
+  max-width: 480px;
+}
+
+.hero-cleaning-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.hero-cleaning-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.hero-cleaning-placeholder i {
+  font-size: 48px;
+  opacity: 0.8;
+}
+
+.hero-cleaning-placeholder span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* スマホ用アイコンバッジ（PC非表示） */
+.hero-icon-badges-mobile {
+  display: none;
+}
+
 .hero-stamp {
   position: absolute;
   background: var(--blue-dark);
@@ -741,6 +819,28 @@ img {
   .hero-title {
     font-size: 30px;
   }
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    display: none; /* タブレットでも画像エリアを非表示 */
+  }
+  .hero-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .hero-icon-badges-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .hero-icon-badge-mobile {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.3));
+  }
   .about-grid {
     gap: 32px;
   }
@@ -791,6 +891,29 @@ img {
   }
   .hero-image {
     display: none; /* スマホでは右側の画像エリアは非表示（背景で見せる） */
+  }
+  .hero-visual {
+    display: none; /* スマホでは右側の画像エリアを非表示 */
+  }
+  .hero-cta-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+  .hero-cta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero-icon-badges-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .hero-icon-badge-mobile {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.3));
   }
   .hero-badges {
     flex-direction: column;
