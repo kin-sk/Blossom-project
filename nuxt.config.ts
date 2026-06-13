@@ -4,8 +4,6 @@ import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  // ソースディレクトリを指定
-  srcDir: "app/",
 
   // Cloudflare Pages用の設定
   nitro: {
