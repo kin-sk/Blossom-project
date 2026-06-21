@@ -60,12 +60,14 @@ const badges = [
             class="hero-icon-badge"
           />
         </div>
-        <div class="hero-cleaning-image">
-          <div class="hero-cleaning-placeholder">
-            <v-icon size="48">mdi-snowflake</v-icon>
-            <span>エアコン清掃イメージ</span>
-          </div>
-        </div>
+        <v-card>
+          <v-card-text>
+            <BeforeAfter
+              before="/images/aircon_out_before.jpg"
+              after="/images/aircon_out_after.jpg"
+            />
+          </v-card-text>
+        </v-card>
       </div>
     </div>
   </section>

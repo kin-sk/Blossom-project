@@ -5,6 +5,13 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
+  // Before,Afterの画像のため
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => tag === "img-comparison-slider",
+    },
+  },
+
   // Cloudflare Pages用の設定
   nitro: {
     preset: "cloudflare-pages",
