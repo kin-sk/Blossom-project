@@ -3,6 +3,12 @@ useHead({
   title: "企業向けサービス | ブロッサム沖縄",
 });
 
+const breadcrumbItems = [
+  { label: "トップ", to: "/" },
+  { label: "サービス一覧", to: "/#service" },
+  { label: "宿泊施設・事業所向けサービス" },
+];
+
 const services = [
   {
     icon: "mdi-office-building",
@@ -27,6 +33,9 @@ const services = [
 
 <template>
   <div>
+    <!-- Breadcrumb -->
+    <Breadcrumb :items="breadcrumbItems" />
+
     <!-- Page Header -->
     <div class="service-page-header">
       <div class="section-inner">
@@ -35,7 +44,7 @@ const services = [
           宿泊施設・事業所向けサービス
         </h1>
         <p class="service-page-subtitle">
-          宿泊施設・事業所の清掃をプロの技術でサポートいたします
+          宿泊施設・事業所の清掃を<br />プロの技術でサポートいたします
         </p>
       </div>
     </div>
@@ -64,35 +73,45 @@ const services = [
           2. 以下のv-rowコンポーネントのコメントを外して使用
           3. 必要に応じて写真のパスを更新
         -->
-        <!--
         <v-row class="mt-8">
           <v-col cols="12">
-            <h3 class="section-title">清掃実績</h3>
+            <h3 class="section-title">清掃例</h3>
           </v-col>
           <v-col cols="12" md="4">
             <v-card>
-              <v-img src="/images/services/business/photo1.jpg" height="200" cover />
-              <v-card-text>ヴィラ客室清掃の様子</v-card-text>
+              <v-card-text>
+                <BeforeAfter
+                  before="/images/aircon_out_before.jpg"
+                  after="/images/aircon_out_after.jpg"
+                />
+              </v-card-text>
             </v-card>
           </v-col>
           <v-col cols="12" md="4">
             <v-card>
-              <v-img src="/images/services/business/photo2.jpg" height="200" cover />
-              <v-card-text>事業所清掃の様子</v-card-text>
+              <v-card-text>
+                <BeforeAfter
+                  before="/images/kankisen_before.jpg"
+                  after="/images/kankisen_after.jpg"
+                />
+              </v-card-text>
             </v-card>
           </v-col>
           <v-col cols="12" md="4">
             <v-card>
-              <v-img src="/images/services/business/photo3.jpg" height="200" cover />
-              <v-card-text>業務用エアコン清掃の様子</v-card-text>
+              <v-card-text>
+                <BeforeAfter
+                  before="/images/renji_before.jpg"
+                  after="/images/renji_after.jpg"
+                />
+              </v-card-text>
             </v-card>
           </v-col>
         </v-row>
-        -->
         <!-- ===== 清掃写真ギャラリー ここまで ===== -->
 
         <!-- Benefits -->
-        <!-- <v-card class="mt-8 pa-6" color="surface-variant">
+        <!-- <v-card class="mt-8 pa-6 service-detail-price">
           <h3 class="section-label mb-4">法人契約のメリット</h3>
           <v-row>
             <v-col cols="12" md="4">
@@ -119,11 +138,23 @@ const services = [
         <!-- CTA -->
       </div>
     </section>
+
+    <!-- Cross Link to Home Service -->
+    <ServiceCrossLink
+      title="一般家庭向けサービスはこちら"
+      description="エアコン清掃、洗濯機清掃、換気扇清掃など"
+      link="/services/home"
+      icon="mdi-home"
+    />
+
     <div>
       <ContactSection />
     </div>
 
     <FeaturesSection />
+
+    <!-- Back to Top Button -->
+    <BackToTop />
   </div>
 </template>
 

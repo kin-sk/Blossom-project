@@ -15,7 +15,7 @@
         <a href="tel:0980-43-9230" class="contact-tel">
           <v-icon>mdi-phone-in-talk</v-icon> 0980-43-9230
         </a>
-        <div class="contact-hours">受付時間 8:00〜18:00（不定休）</div>
+        <div class="contact-hours">受付時間 8:00〜18:00</div>
       </div>
     </div>
   </section>
@@ -58,6 +58,8 @@
 }
 
 @media (max-width: 767px) {
-  .contact-tel { font-size: var(--font-size-xl); }
+  .contact-tel {
+    font-size: var(--font-size-xl);
+  }
 }
 </style>

@@ -18,7 +18,51 @@ const prices = [
           状態・機種によって変動する場合があります。まずはお気軽にご相談ください。
         </p>
       </div>
-      <div class="price-grid">
+      <section>
+        <div class="section-inner">
+          <v-row>
+            <v-col cols="12" md="6">
+              <v-card
+                class="pa-8 text-center h-100 price-card"
+                hover
+                :to="'/services/home'"
+              >
+                <v-icon size="64" color="primary" class="mb-4">mdi-home</v-icon>
+                <h2 class="text-h5 font-weight-bold mb-4">
+                  一般家庭向けサービス
+                </h2>
+                <p class="text-body-2 text-grey-darken-1 mb-4">
+                  エアコン・換気扇・レンジフードなど、<br />
+                  ご家庭のお掃除をサポートします。<br />
+                  <b>詳しく見る</b>
+                  <v-icon end>mdi-chevron-right</v-icon>
+                </p>
+              </v-card>
+            </v-col>
+            <v-col cols="12" md="6">
+              <v-card
+                class="pa-8 text-center h-100 price-card"
+                hover
+                :to="'/services/business'"
+              >
+                <v-icon size="64" color="primary" class="mb-4"
+                  >mdi-domain</v-icon
+                >
+                <h2 class="text-h5 font-weight-bold mb-4">
+                  事業所向けサービス
+                </h2>
+                <p class="text-body-2 text-grey-darken-1 mb-4">
+                  ヴィラ・客室清掃、事業所清掃など、<br />
+                  法人様向けのサービスをご提供します。<br />
+                  <b>詳しく見る</b>
+                  <v-icon end>mdi-chevron-right</v-icon>
+                </p>
+              </v-card>
+            </v-col>
+          </v-row>
+        </div>
+      </section>
+      <!-- <div class="price-grid">
         <div v-for="price in prices" :key="price.name" class="price-card">
           <div class="price-name">{{ price.name }}</div>
           <div class="price-amount">
@@ -26,7 +70,7 @@ const prices = [
             }}<span v-if="price.suffix">{{ price.suffix }}</span>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>

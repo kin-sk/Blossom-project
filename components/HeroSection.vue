@@ -26,9 +26,9 @@ const badges = [
         </div>
         <div class="hero-cta-row">
           <div class="hero-cta">
-            <!-- Phone button only (LINE removed) -->
             <a href="tel:0980-43-9230" class="btn-primary">
-              <v-icon>mdi-phone</v-icon> 今すぐ電話する
+              <v-icon>mdi-phone</v-icon>
+              今すぐ電話する
             </a>
           </div>
           <!-- Mobile icon badges -->
@@ -48,18 +48,18 @@ const badges = [
       </div>
       <!-- PC: Right side visual area -->
       <div class="hero-visual">
-        <div class="hero-icon-badges">
-          <img
-            src="/images/okinawa-icon.png"
-            alt="地域密着 沖縄本部町拠点"
-            class="hero-icon-badge"
-          />
-          <img
-            src="/images/songaihoken-icon.png"
-            alt="損害保険加入店"
-            class="hero-icon-badge"
-          />
-        </div>
+        <!-- 右上のアイコン -->
+        <img
+          src="/images/okinawa-icon.png"
+          alt="地域密着 沖縄本部町拠点"
+          class="hero-icon-badge hero-icon-badge--top-right"
+        />
+        <!-- 左下のアイコン -->
+        <img
+          src="/images/songaihoken-icon.png"
+          alt="損害保険加入店"
+          class="hero-icon-badge hero-icon-badge--bottom-left"
+        />
         <v-card>
           <v-card-text>
             <BeforeAfter
@@ -166,7 +166,7 @@ const badges = [
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 14px 28px;
+  padding: 10px 14px;
   background: var(--color-primary);
   color: var(--color-white);
   font-size: var(--font-size-base);
@@ -186,26 +186,30 @@ const badges = [
   justify-content: center;
 }
 
-.hero-icon-badges {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 2;
-}
-
 .hero-icon-badge {
+  position: absolute;
   width: 120px;
   height: 120px;
   object-fit: contain;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
   transition: transform 0.3s ease;
+  z-index: 2;
 }
 
 .hero-icon-badge:hover {
   transform: scale(1.05);
+}
+
+/* 右上に配置 */
+.hero-icon-badge--top-right {
+  top: -70px;
+  right: -70px;
+}
+
+/* 左下に配置 */
+.hero-icon-badge--bottom-left {
+  bottom: -70px;
+  left: -70px;
 }
 
 .hero-cleaning-image {

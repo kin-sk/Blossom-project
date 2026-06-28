@@ -35,7 +35,7 @@ const services = [
         <h2 class="section-title">
           <v-icon>mdi-leaf</v-icon> サービス一覧 <v-icon>mdi-leaf</v-icon>
         </h2>
-        <p class="section-mode" style="margin-top: 16px">
+        <!-- <p class="section-mode" style="margin-top: 16px">
           <NuxtLink
             to="/services/home"
             class="service-link"
@@ -47,7 +47,7 @@ const services = [
           <NuxtLink to="/services/business" class="service-link">
             <v-icon size="small">mdi-domain</v-icon> 企業向けサービス
           </NuxtLink>
-        </p>
+        </p> -->
       </div>
       <div class="service-grid">
         <div

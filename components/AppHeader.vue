@@ -113,6 +113,7 @@ const navItems = [
   padding: var(--spacing-xs) var(--spacing-sm);
   color: var(--color-text);
   border-radius: var(--radius-sm);
+  white-space: nowrap; /* 改行を防ぐ */
   transition:
     background 0.2s,
     color 0.2s;
@@ -174,14 +175,44 @@ const navItems = [
   margin-top: 1px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1150px) {
   .header-inner {
-    gap: 12px;
+    flex-wrap: wrap;
+    gap: 0;
+    height: auto;
+    padding: var(--spacing-xs) var(--spacing-md);
+    justify-content: space-between;
   }
+
+  /* 上段：ロゴ（左） */
+  .header-logo {
+    order: 1;
+    flex-shrink: 0;
+    padding: var(--spacing-xs) 0;
+  }
+
+  /* 上段：電話番号（右端） */
+  .header-contact {
+    order: 2;
+    flex-shrink: 0;
+    padding: var(--spacing-xs) 0;
+  }
+
+  /* 下段：ナビゲーション（中央揃え） */
+  .header-nav {
+    order: 3;
+    flex: 1 1 100%;
+    width: 100%;
+    justify-content: center;
+    padding: var(--spacing-xs) 0;
+    border-top: 1px solid var(--color-primary-pale);
+  }
+
   .header-nav a {
-    padding: 6px 10px;
+    padding: 6px 8px;
     font-size: 12px;
   }
+
   .tel-number {
     font-size: 15px;
   }
@@ -189,31 +220,31 @@ const navItems = [
 
 @media (max-width: 767px) {
   .header-inner {
-    height: auto;
-    flex-wrap: wrap;
     padding: var(--spacing-xs) var(--spacing-sm);
-    gap: var(--spacing-xs);
   }
-  .header-logo {
-    align-self: auto;
-    padding: 0;
-  }
+
   .logo-img {
-    height: 44px;
-    max-height: 44px;
+    height: 40px;
+    max-height: 40px;
   }
+
+  .logo-name {
+    font-size: 20px;
+  }
+
   .header-nav {
-    order: 3;
-    width: 100%;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 4px;
+    justify-content: center;
+    gap: 8px;
+    padding: 6px 0;
   }
-  .header-contact {
-    order: 2;
+
+  .header-nav a {
+    padding: 5px 6px;
+    font-size: 14px;
   }
+
   .header-tel {
-    display: none;
+    display: none; /* スマホでは電話番号非表示 */
   }
 }
 </style>
