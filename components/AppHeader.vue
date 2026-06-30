@@ -1,8 +1,7 @@
 <script setup lang="ts">
 const navItems = [
-  { label: "サービス一覧", href: "/#service" }, // クリックしたら、一般向け、企業向けのメニュ表示
-  // { label: "家庭向け", href: "/services/home" }, // 仮表示
-  // { label: "企業向け", href: "/services/business" }, // 仮表示
+  { label: "トップ", href: "/" },
+  { label: "サービス一覧", href: "/#service" },
   { label: "料金の目安", href: "/#price" },
   { label: "会社概要", href: "/#about" },
   { label: "お問い合わせ", href: "/#contact" },
@@ -234,17 +233,47 @@ const navItems = [
 
   .header-nav {
     justify-content: center;
-    gap: 8px;
-    padding: 6px 0;
+    flex-wrap: wrap;
+    gap: 3px;
+    padding: 4px 0;
   }
 
   .header-nav a {
-    padding: 5px 6px;
-    font-size: 14px;
+    padding: 3px 6px;
+    font-size: 11px;
   }
 
   .header-tel {
-    display: none; /* スマホでは電話番号非表示 */
+    padding: 4px 8px;
+    gap: 6px;
+  }
+
+  .phone {
+    width: 28px;
+    height: 28px;
+  }
+
+  .tel-hours {
+    display: none;
+  }
+
+  .tel-number {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo-img {
+    height: 32px;
+    max-height: 32px;
+  }
+
+  .logo-name {
+    font-size: 16px;
+  }
+
+  .logo-sub {
+    display: none;
   }
 }
 </style>

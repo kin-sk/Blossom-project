@@ -173,6 +173,7 @@ const badges = [
   font-weight: 700;
   border-radius: var(--radius-lg);
   transition: background 0.2s;
+  white-space: nowrap;
 }
 
 .btn-primary:hover {
@@ -245,7 +246,7 @@ const badges = [
   }
   .hero-icon-badges-mobile {
     display: flex;
-    flex-direction: horizontal;
+    flex-direction: row;
     gap: 8px;
   }
   .hero-icon-badge-mobile {
@@ -265,14 +266,17 @@ const badges = [
   }
   .hero-cta {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
   }
   .hero-badges {
     flex-direction: column;
     gap: 8px;
   }
+  .hero-cta-row {
+    gap: 10px;
+  }
   .hero-icon-badge-mobile {
-    width: 100px;
+    width: 90px;
     height: 100px;
   }
 }
