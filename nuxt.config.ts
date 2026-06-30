@@ -44,7 +44,14 @@ export default defineNuxtConfig({
     "~/assets/css/main.css",
   ],
 
-  ssr: false,
+  // SPAモード:false　SSGモード:true
+  // GoogleはJavaScriptを読み込めますが、ローカルSEO（地域密着ビジネス）においては、
+  // 最初から文字が全て書き込まれているHTML（SSG）の方が
+  // 圧倒的にインデックスされやすく、SEOに強いです。
+  // デプロイ（ビルド）コマンドを nuxt generate
+  // （またはCloudflare側で静的ファイルを生成する設定）にすることで、
+  // 全ページが完全なHTMLとして書き出されます。
+  ssr: true,
 
   app: {
     head: {
