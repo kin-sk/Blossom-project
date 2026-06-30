@@ -135,6 +135,80 @@ img {
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* ===== 共通カードスタイル ===== */
+.c-hover-card {
+  background: var(--color-bg);
+  border: 1.5px solid var(--color-primary-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.c-hover-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== サービスページ共通 ===== */
+.service-page-header {
+  background:
+    linear-gradient(
+      to right,
+      rgba(10, 30, 60, 0.38) 0%,
+      rgba(10, 30, 60, 0.15) 60%,
+      rgba(10, 30, 60, 0.05) 100%
+    ),
+    url("/images/hero.jpg") center center / cover no-repeat;
+  padding: 60px 0 48px;
+  text-align: center;
+  overflow: hidden;
+  filter: brightness(1.15);
+}
+
+.service-page-title {
+  font-size: var(--font-size-3xl);
+  color: var(--color-white);
+  font-weight: 400;
+  margin-bottom: var(--spacing-sm);
+}
+
+.service-page-subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+  opacity: 0.9;
+}
+
+.service-detail-card {
+  background: var(--color-bg);
+  border: 1.5px solid var(--color-primary-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+.service-detail-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.service-detail-desc {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-sm);
+}
+
+.service-detail-price {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
 /* ===== RESPONSIVE BASE ===== */
 @media (max-width: 767px) {
   :root {
@@ -146,5 +220,13 @@ img {
 
   .section-inner {
     padding: 0 var(--spacing-sm);
+  }
+
+  .service-page-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .service-page-subtitle {
+    font-size: var(--font-size-sm);
   }
 }
