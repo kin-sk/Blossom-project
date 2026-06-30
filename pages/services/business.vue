@@ -1,6 +1,12 @@
 <script setup lang="ts">
 useHead({
-  title: "企業向けサービス | ブロッサム沖縄",
+  title: '宿泊施設・ヴィラ客室清掃・業務用エアコン洗浄 | ブロッサム沖縄',
+  meta: [
+    {
+      name: 'description',
+      content: '沖縄本部町のホテル・ヴィラ・民泊の客室清掃、チェックアウト後のリネン交換から、事業所の定期清掃、天井埋込型などの業務用エアコンクリーニングまで幅広く対応。宿泊施設の品質維持をプロの技術でサポートします。定期契約や複数台割引もご相談ください。'
+    }
+  ]
 });
 
 const breadcrumbItems = [
@@ -13,7 +19,7 @@ const services = [
   {
     icon: "mdi-office-building",
     name: "ヴィラ・客室清掃",
-    desc: "チェックアウト後の清掃・リネン交換を迅速対応。宿泊施設の品質維持をサポートいたします。定期契約も承っております。",
+    desc: "チェックアウト後の清掃・リネン交換を迅速に対応いたします。宿泊施設の品質維持をサポートいたします。定期契約も承っております。",
     price: "要お見積り",
   },
   {
@@ -41,7 +47,7 @@ const services = [
       <div class="section-inner">
         <h1 class="service-page-title">
           <v-icon size="32">mdi-domain</v-icon>
-          宿泊施設・事業所向けサービス
+          宿泊施設・事業所向け<br />サービス
         </h1>
         <p class="service-page-subtitle">
           宿泊施設・事業所の清掃を<br />プロの技術でサポートいたします
@@ -67,43 +73,49 @@ const services = [
 
         <!-- ===== 清掃写真ギャラリー ===== -->
         <!--
-          将来の写真追加用スペース
+          写真追加用スペース
           使用方法:
-          1. public/images/services/business/ に写真を追加
+          1. public/images/ に写真を追加
           2. 以下のv-rowコンポーネントのコメントを外して使用
           3. 必要に応じて写真のパスを更新
         -->
         <v-row class="mt-8">
           <v-col cols="12">
-            <h3 class="section-title">清掃例</h3>
+            <h3 class="section-title text-center">清掃例</h3>
           </v-col>
           <v-col cols="12" md="4">
             <v-card>
-              <v-card-text>
-                <BeforeAfter
-                  before="/images/aircon_out_before.jpg"
-                  after="/images/aircon_out_after.jpg"
-                />
+              <v-card-text class="pa-0">
+                <div class="slider-wrap">
+                  <BeforeAfter
+                    before="/images/aircon_out_before.jpg"
+                    after="/images/aircon_out_after.jpg"
+                  />
+                </div>
               </v-card-text>
             </v-card>
           </v-col>
           <v-col cols="12" md="4">
             <v-card>
-              <v-card-text>
-                <BeforeAfter
-                  before="/images/kankisen_before.jpg"
-                  after="/images/kankisen_after.jpg"
-                />
+              <v-card-text class="pa-0">
+                <div class="slider-wrap">
+                  <BeforeAfter
+                    before="/images/kankisen_before.jpg"
+                    after="/images/kankisen_after.jpg"
+                  />
+                </div>
               </v-card-text>
             </v-card>
           </v-col>
           <v-col cols="12" md="4">
             <v-card>
-              <v-card-text>
-                <BeforeAfter
-                  before="/images/renji_before.jpg"
-                  after="/images/renji_after.jpg"
-                />
+              <v-card-text class="pa-0">
+                <div class="slider-wrap">
+                  <BeforeAfter
+                    before="/images/renji_before.jpg"
+                    after="/images/renji_after.jpg"
+                  />
+                </div>
               </v-card-text>
             </v-card>
           </v-col>
@@ -159,62 +171,21 @@ const services = [
 </template>
 
 <style scoped>
-.service-page-header {
-  background:
-    linear-gradient(
-      to right,
-      rgba(10, 30, 60, 0.38) 0%,
-      rgba(10, 30, 60, 0.15) 60%,
-      rgba(10, 30, 60, 0.05) 100%
-    ),
-    url("/images/hero.jpg") center center / cover no-repeat;
-  padding: 60px 0 48px;
-  text-align: center;
+.slider-wrap {
+  height: 220px;
   overflow: hidden;
-  filter: brightness(1.15);
 }
 
-.service-page-title {
-  font-size: var(--font-size-3xl);
-  color: var(--color-white);
-  font-weight: 400;
-  margin-bottom: var(--spacing-sm);
+.slider-wrap :deep(img-comparison-slider) {
+  display: block;
+  width: 100%;
+  height: 220px;
 }
 
-.service-page-subtitle {
-  font-size: var(--font-size-base);
-  color: var(--color-white);
-  opacity: 0.9;
-}
-
-.service-detail-card {
-  background: var(--color-bg);
-  border: 1.5px solid var(--color-primary-border);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  margin-bottom: var(--spacing-md);
-}
-
-.service-detail-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--color-primary-dark);
-  margin-bottom: var(--spacing-sm);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.service-detail-desc {
-  font-size: 14px;
-  color: var(--color-text-muted);
-  line-height: 1.8;
-  margin-bottom: var(--spacing-sm);
-}
-
-.service-detail-price {
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  color: var(--color-primary);
+.slider-wrap :deep(img) {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
 </style>
+

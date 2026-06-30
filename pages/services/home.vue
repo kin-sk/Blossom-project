@@ -1,6 +1,12 @@
 <script setup lang="ts">
 useHead({
-  title: "一般家庭向けサービス | ブロッサム沖縄",
+  title: '一般家庭向けエアコンクリーニング・分解洗浄 | ブロッサム沖縄',
+  meta: [
+    {
+      name: 'description',
+      content: '沖縄県本部町を中心に、一般家庭向けのエアコンクリーニング、洗濯機、換気扇、レンジフードの分解洗浄を行っています。カビや嫌なニオイ、頑固な油汚れをプロの技術で徹底除去！明瞭な料金目安で、初めての方や女性のお客様からも多数ご依頼いただいています。'
+    }
+  ]
 });
 
 const breadcrumbItems = [
@@ -19,7 +25,7 @@ const services = [
   {
     icon: "mdi-washing-machine",
     name: "洗濯機清掃",
-    desc: "洗濯槽の見えない汚れやカビを徹底除去。清潔な洗濯で衣類を守り、嫌なニオイの発生を防ぎます。縦型・ドラム式どちらも対応。",
+    desc: "洗濯槽の見えない汚れやカビを徹底除去。清潔な洗濯で衣類を守り、嫌なニオイの発生を防ぎます。縦型・ドラム式どちらも対応可能です。",
     price: "¥15,000〜（税込）",
   },
   {
@@ -75,13 +81,15 @@ const services = [
         <!--
           写真追加用スペース
           使用方法:
-          1. public/images/services/home/ に写真を追加
+          1. public/images/ に写真を追加
           2. 以下のv-rowコンポーネントのコメントを外して使用
           3. 必要に応じて写真のパスを更新
         -->
         <v-row class="mt-8">
           <v-col cols="12">
-            <h3 class="section-title">清掃例</h3>
+            <h3 class="section-title text-center">
+              <v-icon>mdi-leaf</v-icon> 清掃例 <v-icon>mdi-leaf</v-icon>
+            </h3>
           </v-col>
           <v-col cols="12" md="4">
             <v-card>
@@ -136,63 +144,3 @@ const services = [
   </div>
 </template>
 
-<style scoped>
-.service-page-header {
-  background:
-    linear-gradient(
-      to right,
-      rgba(10, 30, 60, 0.38) 0%,
-      rgba(10, 30, 60, 0.15) 60%,
-      rgba(10, 30, 60, 0.05) 100%
-    ),
-    url("/images/hero.jpg") center center / cover no-repeat;
-  padding: 60px 0 48px;
-  text-align: center;
-  overflow: hidden;
-  filter: brightness(1.15);
-}
-
-.service-page-title {
-  font-size: var(--font-size-3xl);
-  color: var(--color-white);
-  font-weight: 400;
-  margin-bottom: var(--spacing-sm);
-}
-
-.service-page-subtitle {
-  font-size: var(--font-size-base);
-  color: var(--color-white);
-  opacity: 0.9;
-}
-
-.service-detail-card {
-  background: var(--color-bg);
-  border: 1.5px solid var(--color-primary-border);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  margin-bottom: var(--spacing-md);
-}
-
-.service-detail-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--color-primary-dark);
-  margin-bottom: var(--spacing-sm);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.service-detail-desc {
-  font-size: 14px;
-  color: var(--color-text-muted);
-  line-height: 1.8;
-  margin-bottom: var(--spacing-sm);
-}
-
-.service-detail-price {
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  color: var(--color-primary);
-}
-</style>
