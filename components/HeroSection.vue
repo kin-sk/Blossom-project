@@ -11,8 +11,8 @@ const badges = [
     <div class="hero-inner">
       <div class="hero-text">
         <h1 class="hero-title">
-          沖縄の暮らしを、<br />
-          もっと<span class="hero-accent">快適に。</span>
+          暮らしを、もっと<br />
+          <span class="hero-accent">クリーンに。</span>
         </h1>
         <p class="hero-lead">事業所や宿泊施設、ご家庭のお掃除まで、</p>
         <p class="hero-sub">プロの技術でキレイをお届けします。</p>
