@@ -1,12 +1,13 @@
 <script setup lang="ts">
 useHead({
-  title: '一般家庭向けエアコンクリーニング・分解洗浄 | ブロッサム沖縄',
+  title: "一般家庭向けエアコンクリーニング・分解洗浄 | ブロッサム沖縄",
   meta: [
     {
-      name: 'description',
-      content: '沖縄県本部町を中心に、一般家庭向けのエアコンクリーニング、洗濯機、換気扇、レンジフードの分解洗浄を行っています。カビや嫌なニオイ、頑固な油汚れをプロの技術で徹底除去！明瞭な料金目安で、初めての方や女性のお客様からも多数ご依頼いただいています。'
-    }
-  ]
+      name: "description",
+      content:
+        "沖縄県本部町を中心に、一般家庭向けのエアコンクリーニング、洗濯機、換気扇、レンジフードの分解洗浄を行っています。カビや嫌なニオイ、頑固な油汚れをプロの技術で徹底除去！明瞭な料金目安で、初めての方や女性のお客様からも多数ご依頼いただいています。",
+    },
+  ],
 });
 
 const breadcrumbItems = [
@@ -121,6 +122,36 @@ const services = [
               </v-card-text>
             </v-card>
           </v-col>
+          <v-col cols="12" md="4">
+            <v-card>
+              <v-card-text>
+                <BeforeAfter
+                  before="/images/sentaku_before.jpg"
+                  after="/images/sentaku_after.jpg"
+                />
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col cols="12" md="4">
+            <v-card>
+              <v-card-text>
+                <BeforeAfter
+                  before="/images/sentaku_in_before.jpg"
+                  after="/images/sentaku_in_after.jpg"
+                />
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col cols="12" md="4">
+            <v-card>
+              <v-card-text>
+                <BeforeAfter
+                  before="/images/sentaku_in2_before.jpg"
+                  after="/images/sentaku_in2_after.jpg"
+                />
+              </v-card-text>
+            </v-card>
+          </v-col>
         </v-row>
         <!-- ===== 清掃写真ギャラリー ここまで ===== -->
       </div>
@@ -143,4 +174,3 @@ const services = [
     <BackToTop />
   </div>
 </template>
-

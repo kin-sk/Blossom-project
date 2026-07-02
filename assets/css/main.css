@@ -15,10 +15,11 @@
   --color-accent: #11ebff;
 
   /* Typography */
-  --font-family: 'Noto Sans JP', sans-serif;
-  --font-family-serif: 'Shippori Mincho', serif;
+  --font-family: "Noto Sans JP", sans-serif;
+  --font-family-serif: "Shippori Mincho", serif;
 
   --font-size-xs: 11px;
+  --font-size-2xs: 12px;
   --font-size-sm: 13px;
   --font-size-base: 15px;
   --font-size-lg: 18px;
@@ -141,12 +142,40 @@ img {
   border: 1.5px solid var(--color-primary-border);
   border-radius: var(--radius-lg);
   text-align: center;
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
 }
 
 .c-hover-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
+}
+/* カードタイトル(写真なし・情報量が少ないカード用) */
+.c-card-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+/* カードタイトル(写真あり・視覚的重量とのバランスを取るカード用) */
+.c-card-title--lg {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.c-card-desc {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* 補足・説明文は共通(役割が同じなので統一) */
+.c-card-desc--lg {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  line-height: 1.7;
 }
 
 /* ===== サービスページ共通 ===== */

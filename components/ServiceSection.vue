@@ -25,6 +25,8 @@ const services = [
     icon: "mdi-washing-machine",
     name: "洗濯機清掃",
     desc: "洗濯槽の汚れ・カビを除去！清潔な洗濯をサポート。",
+    before: "/images/sentaku_in_before.jpg",
+    after: "/images/sentaku_in_after.jpg",
   },
   {
     icon: "mdi-office-building",
@@ -53,7 +55,9 @@ const services = [
         >
           <div
             class="c-hover-card service-card flex-grow-1"
-            :class="service.before ? 'service-card--with-img' : 'service-card--no-img'"
+            :class="
+              service.before ? 'service-card--with-img' : 'service-card--no-img'
+            "
           >
             <!-- Before/After スライダー -->
             <div v-if="service.before" class="service-slider">
@@ -67,10 +71,16 @@ const services = [
               </div>
 
               <div class="service-name-row">
-                <v-icon v-if="service.before" size="18" color="primary">{{ service.icon }}</v-icon>
-                <span class="service-name">{{ service.name }}</span>
+                <v-icon v-if="service.before" size="30" color="primary">{{
+                  service.icon
+                }}</v-icon>
+                <span
+                  class="service-name"
+                  :class="service.before ? 'c-card-title' : 'c-card-title--lg'"
+                  >{{ service.name }}
+                </span>
               </div>
-              <p class="service-desc">{{ service.desc }}</p>
+              <p class="c-card-desc">{{ service.desc }}</p>
             </div>
           </div>
         </v-col>
@@ -123,17 +133,5 @@ const services = [
   align-items: center;
   gap: 6px;
   margin-bottom: var(--spacing-xs);
-}
-
-.service-name {
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  color: var(--color-primary-dark);
-}
-
-.service-desc {
-  font-size: 12px;
-  color: var(--color-text-muted);
-  line-height: 1.7;
 }
 </style>
